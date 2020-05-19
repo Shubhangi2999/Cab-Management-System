@@ -74,17 +74,17 @@ user u1;
 admin a1;
 int noofcabs;
 
-class Graph  // This class represents a directed graph using adjacency list representation
+class Graph
 {
-    int V;    // No. of vertices
-    list< pair<int, int> > *adj;    // In a weighted graph, we need to store vertex and weight pair for every edge
+    int V; 
+    list< pair<int, int> > *adj;    
 public:
-    Graph(int n);  // Constructor
-    void addEdge(int u, int v, int w); // function to add an edge to graph
-    int shortestPath(int s,int d); // prints shortest path from s
+    Graph(int n);  
+    void addEdge(int u, int v, int w); 
+    int shortestPath(int s,int d);
 };
 
-Graph::Graph(int n)  // Allocates memory for adjacency list
+Graph::Graph(int n) 
 {
     V = n;
     adj = new list<iPair> [n];
@@ -422,7 +422,7 @@ void admin:: driver_earnings(int i,int x)
     ob[i].earnings=ob[i].earnings+x;
 }
 
-void admin:: add_cab()
+/*void admin:: add_cab()
 {
     cab c;
     cout<<"Enter cab number: "<<endl;
@@ -474,7 +474,7 @@ void admin::delete_cab()
     {
         cout<<"\nCab not found!";
     }
-}
+}*/
 
 void admin::showDriverRatings()
 {
@@ -500,31 +500,31 @@ void admin_menu(int choice,int f)
         cout<<"***************OPTIONS***************"<<endl;
           cout<<"\t1. CHANGE PASSWORD"<<endl;
           cout<<"\t2. DISPLAY THE CABS WHICH ARE ALREADY ADDED WITH OUR SERVICES"<<endl;
-          cout<<"\t3. ADD ANOTHER CAB"<<endl;
-          cout<<"\t4. DELETE A CAB"<<endl;
-          cout<<"\t5. SHOW ANY DRIVER'S RATING"<<endl;
-          cout<<"\t6. UPDATE ANY DRIVER'S RATING"<<endl;
-          cout<<"\t7. EXIT"<<endl;
+          //cout<<"\t3. ADD ANOTHER CAB"<<endl;
+          //cout<<"\t4. DELETE A CAB"<<endl;
+          cout<<"\t3. SHOW ANY DRIVER'S RATING"<<endl;
+          cout<<"\t4. UPDATE ANY DRIVER'S RATING"<<endl;
+          cout<<"\t5. EXIT"<<endl;
           cin>>ch1;
           switch(ch1)
           {
-    case 1:
+    case 1:{
         a1.change_password();
         a1.admin_login();
-        break;
-    case 2:
+        break;}
+    case 2:{
         a1.cabs_detail();
-        break;
-    case 3:
+        break;}
+    /*case 3:
         a1.add_cab();
         break;
     case 4:
         a1.delete_cab();
-        break;
-    case 5:
+        break;*/
+    case 3:{
         a1.showDriverRatings();
-        break;
-    case 6:
+        break;}
+    case 4:{
         int f,rate;
         char cbn[9];
         system("cls");
@@ -534,18 +534,18 @@ void admin_menu(int choice,int f)
         cout<<"\nEnter how much you want to rate him: [1/2/3/4/5]"<<endl;
         cin>>rate;
         f=search_cab(cbn);
-        a1.update_rating(rate,f);
-    case 7:
+        a1.update_rating(rate,f);}
+    case 5:{
         system("cls");
         cout<<"QUITTING.............."<<endl;
-        break;
-    default:
+        break;}
+    default:{
         system("cls");
         cout<<"QUITTING.............."<<endl;
-        break;
+        break;}
 
     }
-    }while(ch1!=7);
+    }while(ch1!=5);
     }
 }
 
@@ -559,9 +559,9 @@ void user_menu(int f)
           cout<<"\t1. CHANGE PASSWORD"<<endl;
           cout<<"\t2. BOOK A CAB FOR NOW"<<endl;
           cout<<"\t3. BOOK A CAB FOR LATER"<<endl;
-          cout<<"\t4. TRIP HISTORY"<<endl;
-          cout<<"\t5. PREVIOUS TRIP DETAILS"<<endl;
-          cout<<"\t6. EXIT"<<endl;
+          //cout<<"\t4. TRIP HISTORY"<<endl;
+          //cout<<"\t5. PREVIOUS TRIP DETAILS"<<endl;
+          cout<<"\t4. EXIT"<<endl;
           cin>>ch1;
           switch(ch1)
           {
