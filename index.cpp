@@ -422,7 +422,7 @@ void admin:: driver_earnings(int i,int x)
     ob[i].earnings=ob[i].earnings+x;
 }
 
-/*void admin:: add_cab()
+void admin:: add_cab()
 {
     cab c;
     cout<<"Enter cab number: "<<endl;
@@ -474,7 +474,7 @@ void admin::delete_cab()
     {
         cout<<"\nCab not found!";
     }
-}*/
+}
 
 void admin::showDriverRatings()
 {
@@ -500,11 +500,11 @@ void admin_menu(int choice,int f)
         cout<<"***************OPTIONS***************"<<endl;
           cout<<"\t1. CHANGE PASSWORD"<<endl;
           cout<<"\t2. DISPLAY THE CABS WHICH ARE ALREADY ADDED WITH OUR SERVICES"<<endl;
-          //cout<<"\t3. ADD ANOTHER CAB"<<endl;
-          //cout<<"\t4. DELETE A CAB"<<endl;
-          cout<<"\t3. SHOW ANY DRIVER'S RATING"<<endl;
-          cout<<"\t4. UPDATE ANY DRIVER'S RATING"<<endl;
-          cout<<"\t5. EXIT"<<endl;
+          cout<<"\t3. ADD ANOTHER CAB"<<endl;
+          cout<<"\t4. DELETE A CAB"<<endl;
+          cout<<"\t5. SHOW ANY DRIVER'S RATING"<<endl;
+          cout<<"\t6. UPDATE ANY DRIVER'S RATING"<<endl;
+          cout<<"\t7. EXIT"<<endl;
           cin>>ch1;
           switch(ch1)
           {
@@ -515,16 +515,16 @@ void admin_menu(int choice,int f)
     case 2:{
         a1.cabs_detail();
         break;}
-    /*case 3:
-        a1.add_cab();
-        break;
-    case 4:
-        a1.delete_cab();
-        break;*/
     case 3:{
-        a1.showDriverRatings();
+        a1.add_cab();
         break;}
     case 4:{
+        a1.delete_cab();
+        break;}
+    case 5:{
+        a1.showDriverRatings();
+        break;}
+    case 6:{
         int f,rate;
         char cbn[9];
         system("cls");
@@ -535,7 +535,7 @@ void admin_menu(int choice,int f)
         cin>>rate;
         f=search_cab(cbn);
         a1.update_rating(rate,f);}
-    case 5:{
+    case 7:{
         system("cls");
         cout<<"QUITTING.............."<<endl;
         break;}
@@ -545,53 +545,7 @@ void admin_menu(int choice,int f)
         break;}
 
     }
-    }while(ch1!=5);
-    }
-}
-
-void user_menu(int f)
-{
-    int ch1;
-    if(f==1)
-    {
-        do{
-        cout<<"***************OPTIONS***************"<<endl;
-          cout<<"\t1. CHANGE PASSWORD"<<endl;
-          cout<<"\t2. BOOK A CAB FOR NOW"<<endl;
-          cout<<"\t3. BOOK A CAB FOR LATER"<<endl;
-          //cout<<"\t4. TRIP HISTORY"<<endl;
-          //cout<<"\t5. PREVIOUS TRIP DETAILS"<<endl;
-          cout<<"\t4. EXIT"<<endl;
-          cin>>ch1;
-          switch(ch1)
-          {
-    case 1:
-        u1.change_pass();
-        u1.login();
-        break;
-    case 2:
-        u1.book_cab();
-        break;
-    /*case 3:
-        a1.add_cab();
-        break;*/
-    case 4:
-        u1.trip_history();
-        break;
-    case 5:
-        u1.trip_details();
-        break;
-    case 6:
-        system("cls");
-        cout<<"QUITTING.............."<<endl;
-        break;
-    default:
-        system("cls");
-        cout<<"QUITTING.............."<<endl;
-        break;
-
-    }
-    }while(ch1!=6);
+    }while(ch1!=7);
     }
 }
 
@@ -651,7 +605,6 @@ int main()
     case 1:
        {
         f=u1.login();
-        //user_menu(f);
         break;}
 
     case 2:{
