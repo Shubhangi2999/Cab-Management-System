@@ -53,17 +53,17 @@ int main()
     }
     fil.close();*/
     char ch;
-    fil.open("cabdata1.txt",ios::in);
-    fil2.open("cabdatabase.txt",ios::out);
-    while (!fil.eof())
-{
+    //fil.open("cabdata1.txt",ios::in);
+    //fil2.open("cabdatabase.txt",ios::out);
+    //while (!fil.eof())
+/*{
 fil.get(ch); //reading from file object 'a'
 //cout<<ch;
 fil2<<ch; //writing to file babli.txt
 }
 fil2.close();
-fil.close();
-    fil.open("cabdata1.txt",ios::in);
+fil.close();*/
+    fil.open("cabdatabase.txt",ios::in);
     //fil.seekg(0,ios::beg);
     i=0;
     while(i<10)

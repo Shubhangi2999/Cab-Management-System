@@ -639,35 +639,32 @@ int main()
     }
     noofcabs=i;
     fil.close();
-    cout<<"\n***************MAIN MENU***************"<<endl;
+    int t=1;
+    do{cout<<"\n***************MAIN MENU***************"<<endl;
     cout<<"\t1. USER LOGIN"<<endl;
     cout<<"\t2. USER SIGNUP"<<endl;
-    cout<<"\t3. ADMIN LOGIN"<<endl;
-    cout<<"\t4. EXIT"<<endl;
+    //cout<<"\t3. ADMIN LOGIN"<<endl;
+    cout<<"\t3. EXIT"<<endl;
     cout<<"\n\tEnter your choice: "<<endl;
     cin>>choice;
-    switch(choice)
-    {
+    switch(choice){
     case 1:
+       {
         f=u1.login();
         //user_menu(f);
-        break;
+        break;}
 
-    case 2:
+    case 2:{
         user u2;
         u2.signup();
-        break;
+        break;}
 
-    case 3:
-        f=a1.admin_login();
-        admin_menu(choice,f);
-        break;
-
-    default:
+    case 3:{
         system("cls");
+        t=0;
         cout<<"QUITTING.............."<<endl;
         break;
-    }
+    }}}while(t!=0);
     fil.open("cabdata1.txt",ios::out);
     for(int i=0;i<noofcabs;i++)
     {
